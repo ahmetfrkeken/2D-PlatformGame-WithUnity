@@ -24,7 +24,7 @@ public class E1_MoveState : MoveState
     {
         base.LogicUpdate();
 
-        if(isDetectingWall || isDetectingLedge)
+        if(isDetectingWall || !isDetectingLedge)
         {
             enemy.idleState.SetFlipAfterIdle(true);
             stateMachine.ChangeState(enemy.idleState);
