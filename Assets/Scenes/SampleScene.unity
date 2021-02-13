@@ -254,6 +254,9 @@ MonoBehaviour:
   moveStateData: {fileID: 11400000, guid: 6240811769e607b41a6b8c218acb4e1d, type: 2}
   playerDetectedStateData: {fileID: 11400000, guid: 4e1a2f43dd61f704daaf75732e83890c,
     type: 2}
+  chargeStateData: {fileID: 11400000, guid: 957bdb64864c15344b4fad02195f25b0, type: 2}
+  lookForPlayerStateData: {fileID: 11400000, guid: 0fca5e28fd7551a45a8b5ab246645193,
+    type: 2}
 --- !u!1 &225101805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,7 +1746,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 1502355544}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 7.0663466
@@ -1767,7 +1770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499932716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0600004, y: -2.463981, z: -16.328487}
+  m_LocalPosition: {x: 3.473052, y: -2.655694, z: -18.990723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1715154175}
@@ -1870,7 +1873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0600004, y: -2.463981, z: -16.328487}
+  m_LocalPosition: {x: 3.473052, y: -2.655694, z: -18.990723}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -12103,10 +12106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e97bbe97ab3964683c438a29222d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 1502355545}
   speedAmount: 10
   permissionOfJump: 2
-  jumpAmount: 120
+  jumpAmount: 250
 --- !u!1 &1687739447
 GameObject:
   m_ObjectHideFlags: 0

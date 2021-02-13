@@ -23,6 +23,7 @@ public class State
     {
         startTime = Time.time;
         entity.anim.SetBool(animBoolName, true);//varlığın enter anında animasyonunun başlamasını sağlar.
+        DoChecks();
     }
 
     public virtual void Exit()
@@ -38,7 +39,12 @@ public class State
 
     public virtual void PhysicsUpdate()
     {
+        DoChecks();
 
+    }
+
+    public virtual void DoChecks()
+    {
 
     }
 } 

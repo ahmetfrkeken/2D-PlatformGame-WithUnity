@@ -25,10 +25,13 @@ public class E1_PlayerDetectedState : PlayerDetectedState
     {
         base.LogicUpdate();
 
-        if (!isPlayerInMinAgroRange)
+        if (performLongRangeAction)
         {
-            stateMachine.ChangeState(enemy.idleState);
-            enemy.idleState.SetFlipAfterIdle(false);
+            stateMachine.ChangeState(enemy.chargeState);
+        }
+        else if (!isPlayerInMaxAgroRange)
+        {
+            stateMachine.ChangeState(enemy.lookForPlayerState);
         }
     }
 

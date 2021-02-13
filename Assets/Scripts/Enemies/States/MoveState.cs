@@ -15,15 +15,20 @@ public class MoveState : State
         this.stateData = stateData;
     }
 
+    public override void DoChecks()
+    {
+        base.DoChecks();
+        isDetectingWall = entity.CheckWall();
+        isDetectingLedge = entity.CheckLedge();
+        isPlayerInMinAgroRange = entity.CheckPlayerMinAgroRange();
+    }
+
     public override void Enter()//Buradak işlem;Tüm varlıkların hareket hızları vardır. Bu yüzden entity classımızda bu özelliği tanımladık.
     //Her varlığın yürüme durumu olduğundan yürüme durumunda, yürüme hızı verisini alarak varlığın yürüme durumundaki hızını set etmiş olduk. 
     {
 
         base.Enter();
         entity.SetVelocity(stateData.movementSpeed);
-        isDetectingWall = entity.CheckWall();
-        isDetectingLedge = entity.CheckLedge();
-        isPlayerInMinAgroRange = entity.CheckPlayerMinAgroRange();
     }
 
     public override void Exit()
@@ -39,9 +44,5 @@ public class MoveState : State
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-
-        isDetectingWall = entity.CheckWall();
-        isDetectingLedge = entity.CheckLedge();
-        isPlayerInMinAgroRange = entity.CheckPlayerMinAgroRange();
     }
 }
