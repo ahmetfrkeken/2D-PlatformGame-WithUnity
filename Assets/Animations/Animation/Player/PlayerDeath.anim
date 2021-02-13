@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PirateAttack2
+  m_Name: PlayerDeath
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,22 +20,22 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -4037305469998616386, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: -5512572038756664377, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     - time: 0.2
-      value: {fileID: 4990269489567953464, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: 7579540376592899474, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     - time: 0.4
-      value: {fileID: 1700543365235308791, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: 8809732215974140799, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     - time: 0.6
-      value: {fileID: -8205589114870518797, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: 3117451268202928608, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     - time: 0.8
-      value: {fileID: -1331068528020860823, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: 3370160059393513913, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     - time: 1
-      value: {fileID: -4874985470358361502, guid: ce55e59d120b3f34c8b17af3b0befc0b,
+      value: {fileID: -7719539525251913515, guid: f7c8919ff06e2454fb920004d94e9cb1,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -56,12 +56,12 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -4037305469998616386, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
-    - {fileID: 4990269489567953464, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
-    - {fileID: 1700543365235308791, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
-    - {fileID: -8205589114870518797, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
-    - {fileID: -1331068528020860823, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
-    - {fileID: -4874985470358361502, guid: ce55e59d120b3f34c8b17af3b0befc0b, type: 3}
+    - {fileID: -5512572038756664377, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
+    - {fileID: 7579540376592899474, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
+    - {fileID: 8809732215974140799, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
+    - {fileID: 3117451268202928608, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
+    - {fileID: 3370160059393513913, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
+    - {fileID: -7719539525251913515, guid: f7c8919ff06e2454fb920004d94e9cb1, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -86,18 +86,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.8
-    functionName: CheckAttackHitBox
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 1
-    functionName: FinishAttack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []
