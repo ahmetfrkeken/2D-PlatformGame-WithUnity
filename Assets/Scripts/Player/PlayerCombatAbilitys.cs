@@ -8,6 +8,7 @@ public class PlayerCombatAbilitys : MonoBehaviour
     private bool combatEnabled;
 
     private bool gotInput, isAttacking, isFirstAttack, isSecondAttack;
+    private AttackDetails attackDetails;
 
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
@@ -19,11 +20,16 @@ public class PlayerCombatAbilitys : MonoBehaviour
     private float lastInputTime = Mathf.NegativeInfinity;
     private Animator anim;
 
+    private PlayerController PC;
+    private PlayerStats PS;
+
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         anim.SetBool("canAttack", combatEnabled);
+        PC = GetComponent<PlayerController>();
+        PS = GetComponent<PlayerStats>();
     }
     private void Update()
     {
@@ -72,6 +78,8 @@ public class PlayerCombatAbilitys : MonoBehaviour
     private void CheckAttackHitBox()
     {
         Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attack1HitBoxPos.position, attack1Radius, whatIsDamageable);
+        attackDetails.damageAmount = attack1Damage;
+        attackDetails.position = transform.position;
 
         foreach (Collider2D collider in detectedObjects)
         {
@@ -86,6 +94,16 @@ public class PlayerCombatAbilitys : MonoBehaviour
         isAttacking = false;
         anim.SetBool("isAttacking", isAttacking);
         anim.SetBool("attack1", false);
+    }
+
+    private void Damage(AttackDetails attackDetails)
+    {
+        if (!PC.GetDashStatus())
+        {
+            int direction;
+            PS.DecreaseHealth(attackDetails.damageAmount);
+
+        }
     }
 
     private void nDrawGizmos()

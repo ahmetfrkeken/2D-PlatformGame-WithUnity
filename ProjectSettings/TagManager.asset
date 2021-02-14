@@ -17,7 +17,7 @@ TagManager:
   - Ground
   - Damageable
   - Player
-  - 
+  - Dead
   - 
   - 
   - 
@@ -50,4 +50,10 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 278256811
+    locked: 0
+  - name: Enemy
+    uniqueID: 46096365
+    locked: 0
+  - name: Player
+    uniqueID: 3322778475
     locked: 0
