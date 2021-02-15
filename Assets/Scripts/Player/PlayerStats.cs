@@ -6,12 +6,14 @@ public class PlayerStats : MonoBehaviour
 {
     [SerializeField]
     private float maxHealth;
+
     [SerializeField]
     private GameObject
         deathChunkParticle,
         deathBloodParticle;
 
     private float currentHealth;
+
     private GameManager GM;
 
     private void Start()
@@ -20,15 +22,16 @@ public class PlayerStats : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    public void DecreaseHealth( float amount)
+    public void DecreaseHealth(float amount)
     {
         currentHealth -= amount;
 
-        if(currentHealth <= 0.0f)
+        if (currentHealth <= 0.0f)
         {
             Die();
         }
     }
+
     private void Die()
     {
         Instantiate(deathChunkParticle, transform.position, deathChunkParticle.transform.rotation);
@@ -36,5 +39,4 @@ public class PlayerStats : MonoBehaviour
         GM.Respawn();
         Destroy(gameObject);
     }
-
 }

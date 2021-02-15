@@ -9,7 +9,7 @@ public class AnimationToStateMachine : MonoBehaviour
     {
         attackState.TriggerAttack();
     }
-    private void FinishAttac()
+    private void FinishAttack()
     {
         attackState.FinishAttack();
     }

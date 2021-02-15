@@ -7,7 +7,7 @@ public class State
     protected FiniteStateMachine stateMachine;
     protected Entity entity;
 
-    protected float startTime; //Enemy nin state e giriş zamanını belirler.
+    public float startTime { get; protected set; } //Enemy nin state e giriş zamanını belirler.
 
     protected string animBoolName;
 

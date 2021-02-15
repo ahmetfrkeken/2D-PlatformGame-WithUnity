@@ -18,8 +18,14 @@ public class PlayerController : MonoBehaviour
     private bool canJump;
     private bool isTouchingWall;
     private bool isWallSliding;
+    private bool knockBack;
     private float movementInputDirection;
     private float inputSpeed;
+    private float knockBackStartTime;
+
+    [SerializeField]
+    private float knockBackDuration;
+
 
     public float groundCheckRadius;
     public float movementSpeed = 10f;
@@ -31,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public float wallCheckDistance;
     public float wallHopForce;
     public float wallJumpForce;
+
+    [SerializeField]
+    private Vector2 knockBackSpeed;
 
     public Vector2 wallHopDirection;
     public Vector2 wallJumpDirection;
@@ -69,6 +78,23 @@ public class PlayerController : MonoBehaviour
         CheckSurroundings();
     }
 
+
+    public void Knockback(int direction)
+    {
+        knockBack = true;
+        knockBackStartTime = Time.time;
+        rb.velocity = new Vector2(knockBackSpeed.x * direction, knockBackSpeed.y);
+
+    }
+
+    private void CheckKnockback()
+    {
+        if(Time.time >= knockBackStartTime + knockBackDuration)
+        {
+            knockBack = false;
+            rb.velocity = new Vector2(0.0f, rb.velocity.y);
+        }
+    }
 
     private void CheckIfWallSliding()
     {
@@ -175,7 +201,7 @@ public class PlayerController : MonoBehaviour
 
     private void ApplyMovement()
     {
-        if (!isGrounded && !isWallSliding && movementInputDirection == 0)
+        if (!isGrounded && !isWallSliding && movementInputDirection == 0  )
         {
             rb.velocity = new Vector2(rb.velocity.x * airDragMultiplier, rb.velocity.y);
         }
