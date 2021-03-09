@@ -70,6 +70,10 @@ public class Enemy2 : Entity
         {
             stateMachine.ChangeState(stunState);
         }
+        else if (CheckPlayerMinAgroRange())
+        {
+            stateMachine.ChangeState(rangedAttackState);
+        }
         else if (!CheckPlayerMinAgroRange())
         {
             lookForPlayerState.SetTurnImmediately(true);

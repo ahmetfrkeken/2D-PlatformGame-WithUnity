@@ -9,6 +9,8 @@ public class Entity : MonoBehaviour
     public FiniteStateMachine stateMachine;
 
     public D_Entity entityData; //entity verilerinin olduğu sınıfa referans ettik.
+    public EnemyHealthBar enemyHealthBar;
+
 
     public int facingDirection { get; private set; }
     public Rigidbody2D rb { get; private set; }
@@ -26,6 +28,7 @@ public class Entity : MonoBehaviour
     private Transform playerCheck;
     [SerializeField]
     public Transform groundCheck;
+    
 
 
     private float currentHealth;
@@ -35,6 +38,8 @@ public class Entity : MonoBehaviour
     
 
     private Vector2 velocityWorkspace; //burada movement için oluşturacağımız hız vektörünü tanımladık
+
+
 
     protected bool isStunned;
     protected bool isDead;
@@ -49,6 +54,7 @@ public class Entity : MonoBehaviour
         rb = aliveGO.GetComponent<Rigidbody2D>();
         anim = aliveGO.GetComponent<Animator>();
         atsm = aliveGO.GetComponent<AnimationToStateMachine>();
+        enemyHealthBar.Initialize(currentHealth);
 
         stateMachine = new FiniteStateMachine();
     }
@@ -119,6 +125,8 @@ public class Entity : MonoBehaviour
         lastDamageTime = Time.time;
 
         currentHealth -= attackDetails.damageAmount;
+        enemyHealthBar.SetHealth(currentHealth);
+
         currentStunResistance -= attackDetails.stunDamageAmount;
 
         DamageHop(entityData.damageHopSpeed);

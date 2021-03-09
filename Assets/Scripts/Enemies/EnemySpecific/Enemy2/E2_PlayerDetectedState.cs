@@ -32,6 +32,10 @@ public class E2_PlayerDetectedState : PlayerDetectedState
         {
             stateMachine.ChangeState(enemy.lookForPlayerState);
         }
+        else if (performLongRangeAction)
+        {
+            stateMachine.ChangeState(enemy.rangedAttackState);
+        }
     }
 
     public override void PhysicsUpdate()

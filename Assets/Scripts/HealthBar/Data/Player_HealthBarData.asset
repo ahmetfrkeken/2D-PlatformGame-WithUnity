@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 936caacdd0a3bda41be47b4f59f5af3f, type: 3}
-  m_Name: E2_PlayerDetectedStateData
+  m_Script: {fileID: 11500000, guid: fd77d62e9746ba148a904ef699d4bfdd, type: 3}
+  m_Name: Player_HealthBarData
   m_EditorClassIdentifier: 
-  LongRangeActionTime: 1
+  playerMaxHealth: 50
+  enemy1MaxHealth: 0

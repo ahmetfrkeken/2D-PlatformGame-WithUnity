@@ -31,11 +31,15 @@ public class E2_DodgeState : DodgeState
 
         if (isDodgeOver)
         {
-            if (!isPlayerInMaxAgroRange)
+            if (isPlayerInMaxAgroRange && !performCloseRangeAction)
+            {
+                stateMachine.ChangeState(enemy.rangedAttackState);
+            }
+            else if (!isPlayerInMaxAgroRange)
             {
                 stateMachine.ChangeState(enemy.lookForPlayerState);
             }
-
+            
             //TODO: rangeAttackState
         }
     }

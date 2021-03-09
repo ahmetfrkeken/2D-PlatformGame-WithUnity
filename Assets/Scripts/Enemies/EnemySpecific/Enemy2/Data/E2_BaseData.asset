@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e471ee48954226449038b970470020e, type: 3}
   m_Name: E2_BaseData
   m_EditorClassIdentifier: 
-  maxHealth: 30
+  maxHealth: 40
   wallCheckDistance: 0.3
   ledgeCheckDistance: 0.4
   damageHopSpeed: 5
   groundCheckRadius: 0.3
-  minAgroDistance: 3
-  maxAgroDistance: 4
+  minAgroDistance: 7.5
+  maxAgroDistance: 8.5
   stunResistance: 3
   stunRecoveryTime: 2
   closeRangeActionDistance: 0.5
